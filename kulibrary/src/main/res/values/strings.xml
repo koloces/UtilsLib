@@ -1,0 +1,13 @@
+<resources >
+    <string name="app_name">UtilsLib</string>
+    <string name="quanxianjingyong">已禁用权限，请手动授予</string>
+    <string name="setting">设置</string>
+    <string name="cancel">取消</string>
+
+    <string name="before_minute">分钟前</string>
+    <string name="before_hours">小时前</string>
+    <string name="yesterday">昨天</string>
+    <string name="before_yesterday">前天</string>
+    <string name="isHasNet">当前无网络，请检查网络连接是否打开</string>
+    <string name="netError">当前网络信号不好，请稍后再试</string>
+</resources>

@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 101
+        versionName "1.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation "junit:junit:4.12"
+    androidTestImplementation "androidx.test:runner:1.2.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
+
+    api "androidx.appcompat:appcompat:1.1.0"
+    //城市切换 https://github.com/YoKeyword/IndexableRecyclerView
+    api 'me.yokeyword:indexablerecyclerview:1.3.0'
+    //Gson解析
+    api "com.google.code.gson:gson:2.8.1"
+    //QMUI
+    api "com.qmuiteam:qmui:1.4.0"
+    //arch 库会依赖 qmui 库， 因此也需要引入 qmui 库
+    api "com.qmuiteam:arch:0.3.1"
+    //design(X 变成这个了) api("com.android.support:design:${DESIGIN_SUPPORT_VERSION}")
+    api("com.google.android.material:material:1.0.0")
+    //constraintlayout
+    api("androidx.constraintlayout:constraintlayout:1.1.2")
+    //EventBus
+    api "org.greenrobot:eventbus:3.0.0"
+    //RecyclerView适配器https://www.jianshu.com/p/b343fcff51b0
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30"
+    //图片压缩
+    api "top.zibin:Luban:1.1.3"
+    //刷新和加载框架
+    api "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-26"
+    //没有使用特殊Header，可以不加这行
+    api "com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-26"
+    //glide
+    api "com.github.bumptech.glide:glide:4.9.0"
+
+    /** okgo 网络框架  */
+    api "com.lzy.net:okgo:3.0.4"
+    api 'com.readystatesoftware.chuck:library:1.0.4'
+
+
+    //图片选择 github: https://github.com/LuckSiege/PictureSelector
+    implementation project(path: ':picture_library')
+//    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.4'
+
+}
