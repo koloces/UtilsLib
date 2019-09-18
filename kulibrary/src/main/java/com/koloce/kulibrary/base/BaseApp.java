@@ -3,6 +3,7 @@ package com.koloce.kulibrary.base;
 
 import android.app.Application;
 
+import com.koloce.kulibrary.utils.LogUtils;
 import com.koloce.kulibrary.utils.MobileInfoUtil;
 import com.koloce.kulibrary.utils.city.CityDataManager;
 import com.koloce.kulibrary.utils.http.exception.OnErrorListener;
@@ -26,6 +27,7 @@ import okhttp3.OkHttpClient;
 public abstract class BaseApp extends Application {
     private static BaseApp context;
     public static OnErrorListener errorListener;
+    public static boolean isDebug = true;
 
     public static BaseApp getContext() {
         return context;
@@ -35,6 +37,7 @@ public abstract class BaseApp extends Application {
     public void onCreate() {
         super.onCreate();
         context = this;
+        LogUtils.init(isDebug);
         closeAndroidPDialog();
         MobileInfoUtil.init(context);
         QMUISwipeBackActivityManager.init(this);
@@ -51,7 +54,7 @@ public abstract class BaseApp extends Application {
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("Http");
             //log打印级别，决定了log显示的详细程度
-            loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
+            loggingInterceptor.setPrintLevel(isDebug ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE);
             //log颜色级别，决定了log在控制台显示的颜色
             loggingInterceptor.setColorLevel(Level.SEVERE);
             builder.addInterceptor(loggingInterceptor);

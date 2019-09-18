@@ -16,7 +16,11 @@ public class LogUtils {
     private static final int LOG_LEVER_W = 4;
     private static final int LOG_LEVER_E = 5;
 
-    private static final int LOG_LEVER = LOG_LEVER_E;
+    private static int LOG_LEVER = LOG_LEVER_E;
+
+    public static void init(boolean isDebug){
+        LOG_LEVER = isDebug ? LOG_LEVER_E : LOG_LEVER_0;
+    }
 
     public static void e(String str) {
         e(TAG, str);
