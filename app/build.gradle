@@ -20,6 +20,19 @@ android {
         sourceCompatibility rootProject.ext.appSourceCompatibility
         targetCompatibility rootProject.ext.appTargetCompatibility
     }
+
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -29,5 +42,5 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${ANDROIDX_TEST_ESPRESSO_VERSION}"
 
     implementation project(path: ':kulibrary')
-
+//    implementation(name: 'kulibrary-release', ext: 'aar')
 }
