@@ -15,6 +15,7 @@
 2. implementation 'com.github.koloces.UtilsLib:kulibrary:v1.1'
 3. compileOptions {sourceCompatibility JavaVersion.VERSION_1_8
               targetCompatibility JavaVersion.VERSION_1_8}
+4.AppTheme继承QMUI.Compat.NoActionBar
 
 #### 使用说明
 
