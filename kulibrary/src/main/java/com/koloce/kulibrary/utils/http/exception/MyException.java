@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.koloce.kulibrary.utils.http.been.BaseResponseBean;
 
 /**
- * https://github.com/jeasonlzy
+ * Created by koloces on 2019/5/8
  */
 
 public class MyException extends IllegalStateException {

@@ -22,7 +22,7 @@ import android.view.Window;
 import com.lzy.okgo.request.base.Request;
 
 /**
- * https://github.com/jeasonlzy
+ * Created by koloces on 2019/5/8
  */
 public abstract class DialogCallback<T> extends JsonCallback<T> {
 

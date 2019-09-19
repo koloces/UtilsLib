@@ -28,7 +28,7 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 
 /**
- * https://github.com/jeasonlzy
+ * Created by koloces on 2019/5/8
  */
 public class Convert {
     private static Gson create() {

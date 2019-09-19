@@ -3,7 +3,7 @@ package com.koloce.kulibrary.utils.http.been;
 import java.io.Serializable;
 
 /**
- * https://github.com/jeasonlzy
+ * Created by koloces on 2019/5/8
  */
 
 public class ResponseBean<T> implements Serializable {

@@ -34,7 +34,7 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 /**
- * Github地址：https://github.com/jeasonlzy
+ * Created by koloces on 2019/5/8
  */
 public class JsonConvert<T> implements Converter<T> {
 
