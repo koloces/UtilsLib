@@ -1,6 +1,4 @@
 package com.koloce.kulibrary.utils.http.callbck;
-
-
 import com.koloce.kulibrary.utils.http.been.ResponseBean;
 import com.lzy.okgo.model.Response;
 
