@@ -28,6 +28,7 @@ public abstract class BaseApp extends Application {
     private static BaseApp context;
     public static OnErrorListener errorListener;
     public static boolean isDebug = true;
+    public static int SUCCESS_CODE = 1;
 
     public static BaseApp getContext() {
         return context;
@@ -37,6 +38,9 @@ public abstract class BaseApp extends Application {
     public void onCreate() {
         super.onCreate();
         context = this;
+        errorListener = getErrorListener();
+        isDebug = isDebug();
+        SUCCESS_CODE = getSuccessCode();
         LogUtils.init(isDebug);
         closeAndroidPDialog();
         MobileInfoUtil.init(context);
@@ -44,6 +48,10 @@ public abstract class BaseApp extends Application {
         CityDataManager.init();
         initOkGo();
     }
+
+    protected abstract boolean isDebug();
+    protected abstract OnErrorListener getErrorListener();
+    protected abstract int getSuccessCode();
 
     /**
      * 初始化OkGo

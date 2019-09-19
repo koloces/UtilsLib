@@ -18,6 +18,7 @@ package com.koloce.kulibrary.utils.http.callbck;
 
 
 import com.google.gson.stream.JsonReader;
+import com.koloce.kulibrary.base.BaseApp;
 import com.koloce.kulibrary.utils.http.been.BaseResponseBean;
 import com.koloce.kulibrary.utils.http.been.ResponseBean;
 import com.koloce.kulibrary.utils.http.exception.MyException;
@@ -175,7 +176,7 @@ public class JsonConvert<T> implements Converter<T> {
                         code = responseBean.code;
                         msg = responseBean.msg;
                     }
-                    if (code == 1) { //约定 正确返回码
+                    if (code == BaseApp.SUCCESS_CODE) { //约定 正确返回码
                         return (T) responseBean;
                     } else{
                         throw new MyException("{\"result\":"+code+",\"msg\":\""+msg+"\"}"); //直接抛自定义异常  会出现在 callback的onError中
