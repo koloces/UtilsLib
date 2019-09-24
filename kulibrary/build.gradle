@@ -66,6 +66,6 @@ dependencies {
 
     //图片选择 github: https://github.com/LuckSiege/PictureSelector
 //    implementation project(path: ':picture_library')
-    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.4'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.5'
 
 }
