@@ -9,7 +9,7 @@ Software architecture description
 #### Installation
 
 1. maven {url 'https://jitpack.io'}
-2. implementation 'com.github.koloces.UtilsLib:kulibrary:v1.1'
+2. implementation 'com.github.koloces:UtilsLib:v1.2'
 3. compileOptions {sourceCompatibility JavaVersion.VERSION_1_8
               targetCompatibility JavaVersion.VERSION_1_8}
 
