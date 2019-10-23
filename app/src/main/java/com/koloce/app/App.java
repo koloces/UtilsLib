@@ -9,6 +9,11 @@ import com.koloce.kulibrary.utils.http.exception.OnErrorListener;
  */
 public class App extends BaseApp {
     @Override
+    protected void init() {
+
+    }
+
+    @Override
     protected boolean isDebug() {
         return false;
     }

@@ -32,6 +32,8 @@ public abstract class BaseDialog extends Dialog implements DialogInterface.OnKey
     protected Context mContent;
     protected WindowManager windowManager;
     private GravityType type = GravityType.MIDDLE;
+    //背景透明度
+    private float dimAmount = 0.3f;
 
     public BaseDialog(@NonNull Context context) {
         this(context, R.style.BaseDialogTheme);
@@ -79,6 +81,10 @@ public abstract class BaseDialog extends Dialog implements DialogInterface.OnKey
         setCanClose(true);
     }
 
+    public void setDimAmount(float dimAmount){
+        this.dimAmount = dimAmount;
+    }
+
     @Override
     public void show() {
         super.show();
@@ -101,7 +107,7 @@ public abstract class BaseDialog extends Dialog implements DialogInterface.OnKey
         //让该window后所有的东西都成暗淡（dim）dimAmount设置变暗程度
         window.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         WindowManager.LayoutParams layoutParams = window.getAttributes();
-        layoutParams.dimAmount = 0.3f;
+        layoutParams.dimAmount = this.dimAmount;
         layoutParams.horizontalMargin = 0;
         if (type == GravityType.TOP){
             layoutParams.gravity = Gravity.TOP;
@@ -117,7 +123,6 @@ public abstract class BaseDialog extends Dialog implements DialogInterface.OnKey
         //如果还想修改布局可以在这个方法里进行
 //        onSetLayoutParam(layoutParams, rect);
         window.setAttributes(layoutParams);
-
     }
 
     @Override

@@ -47,8 +47,10 @@ public abstract class BaseApp extends Application {
         QMUISwipeBackActivityManager.init(this);
         CityDataManager.init();
         initOkGo();
+        init();
     }
 
+    protected abstract void init();
     protected abstract boolean isDebug();
     protected abstract OnErrorListener getErrorListener();
     protected abstract int getSuccessCode();
