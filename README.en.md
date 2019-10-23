@@ -6,6 +6,8 @@
 #### Software Architecture
 Software architecture description
 
+https://jitpack.io
+
 #### Installation
 
 1. maven {url 'https://jitpack.io'}
