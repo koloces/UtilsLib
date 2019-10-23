@@ -11,7 +11,7 @@ https://jitpack.io
 #### Installation
 
 1. maven {url 'https://jitpack.io'}
-2. implementation 'com.github.koloces:UtilsLib:v1.2'
+2. implementation 'com.github.koloces:UtilsLib:v1.3'
 3. compileOptions {sourceCompatibility JavaVersion.VERSION_1_8
               targetCompatibility JavaVersion.VERSION_1_8}
 
