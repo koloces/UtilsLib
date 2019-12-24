@@ -2,6 +2,7 @@ package com.koloce.kulibrary.base;
 
 
 import android.app.Application;
+import android.util.ArrayMap;
 
 import com.koloce.kulibrary.utils.LogUtils;
 import com.koloce.kulibrary.utils.MobileInfoUtil;
@@ -109,4 +110,20 @@ public abstract class BaseApp extends Application {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 添加公共参数
+     *
+     * @param params
+     * @return
+     */
+    public abstract ArrayMap<String, Object> addPublicObjectParams(ArrayMap<String, Object> params);
+
+    /**
+     * 添加公共参数
+     *
+     * @param params
+     * @return
+     */
+    public abstract ArrayMap<String, String> addPublicParams(ArrayMap<String, String> params);
 }

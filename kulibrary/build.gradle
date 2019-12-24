@@ -39,9 +39,13 @@ dependencies {
     //Gson解析
     api "com.google.code.gson:gson:2.8.1"
     //QMUI
-    api "com.qmuiteam:qmui:1.4.0"
+//    api "com.qmuiteam:qmui:1.4.0"
+    api 'com.qmuiteam:qmui:2.0.0-alpha02'
     //arch 库会依赖 qmui 库， 因此也需要引入 qmui 库
-    api "com.qmuiteam:arch:0.3.1"
+//    api "com.qmuiteam:arch:0.3.1"
+    api "com.qmuiteam:arch:2.0.0-alpha02"
+//    kapt "com.qmuiteam:arch-compiler:2.0.0-alpha02" // use annotationProcessor if java
+
     //design(X 变成这个了) api("com.android.support:design:${DESIGIN_SUPPORT_VERSION}")
     api("com.google.android.material:material:1.0.0")
     //constraintlayout

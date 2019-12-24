@@ -36,6 +36,7 @@ import java.util.List;
  * Created on 2019/3/30
  */
 public abstract class UIActivity extends QMUIActivity {
+    private String TAG;
 
     //创建监听权限的接口对象
     private PermissionsUtils.IPermissionsResult permissionsResult;
@@ -53,6 +54,7 @@ public abstract class UIActivity extends QMUIActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TAG = this.getClass().getSimpleName();
         mActivity = this;
         ActivityManager.getInstance().addActivity(this);
 

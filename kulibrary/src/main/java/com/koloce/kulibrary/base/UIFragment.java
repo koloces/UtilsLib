@@ -27,6 +27,7 @@ import java.util.List;
  * Created on 2019/3/30
  */
 public abstract class UIFragment extends Fragment {
+    private String TAG;
     protected View mView;
     private LoadingDialog loadingDialog;
     public Context mActivity;
@@ -34,6 +35,7 @@ public abstract class UIFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        TAG = this.getClass().getSimpleName();
         mActivity = getActivity();
         mView = LayoutInflater.from(getActivity()).inflate(getLayoutId(), null);
         initBeforeInitView();
