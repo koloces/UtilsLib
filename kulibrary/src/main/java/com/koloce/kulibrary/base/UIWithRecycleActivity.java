@@ -54,9 +54,9 @@ public abstract class UIWithRecycleActivity<T> extends UIActivity implements OnL
         }
     }
 
-    protected abstract View getEmptyView();
-
     protected abstract SmartRefreshLayout getRefreshLayout();
+
+    protected abstract View getEmptyView();
 
     protected abstract RecyclerView getRecyclerView();
 

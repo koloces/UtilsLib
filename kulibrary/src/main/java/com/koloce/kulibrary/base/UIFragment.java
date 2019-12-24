@@ -45,15 +45,15 @@ public abstract class UIFragment extends Fragment {
         return mView;
     }
 
-    protected abstract void afterInitView();
-
-    protected abstract void initBeforeInitView();
-
     protected abstract int getLayoutId();
 
     protected abstract void initView(View mView);
 
     protected abstract void initListener();
+
+    protected abstract void afterInitView();
+
+    protected abstract void initBeforeInitView();
 
     protected void toNextActivity(Class clz) {
         Intent intent = new Intent(getActivity(), clz);

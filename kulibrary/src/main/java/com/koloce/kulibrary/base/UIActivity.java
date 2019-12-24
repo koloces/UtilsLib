@@ -68,11 +68,11 @@ public abstract class UIActivity extends QMUIActivity {
         initListener();
     }
 
-    protected abstract void afterInitView();
-
     protected abstract void initBeforeSetContentView();
 
     protected abstract void initBeforeInitView();
+
+    protected abstract void afterInitView();
 
     protected void toNextActivity(Class clz){
         Intent intent = new Intent(this,clz);
