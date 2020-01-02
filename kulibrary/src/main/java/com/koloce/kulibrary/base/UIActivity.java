@@ -423,9 +423,10 @@ public abstract class UIActivity extends QMUIActivity {
      */
     @Override
     protected boolean followSkin() {
-
         return false;
     }
+
+
 
     /**
      * 文字是否根据系统文字大小改变而改变
