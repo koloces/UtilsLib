@@ -2,6 +2,8 @@ package com.koloce.kulibrary.base;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.qmuiteam.qmui.arch.QMUIActivity;
 import com.qmuiteam.qmui.util.QMUIKeyboardHelper;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
+import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +47,7 @@ public abstract class UIActivity extends QMUIActivity {
     private LoadingDialog loadingDialog;
     public UIActivity mActivity;
     private OnOpenAlbumResultListener openAlbumResultListener;
+    private boolean isTextSizeChange = true;
 
     protected abstract int getLayoutId();
 
@@ -414,11 +418,33 @@ public abstract class UIActivity extends QMUIActivity {
     }
 
     /**
-     * 禁用换肤
+     * 禁用换肤({@link QMUIRoundButton}在开启换肤的时候回失效)
      * @return
      */
     @Override
     protected boolean followSkin() {
+
         return false;
+    }
+
+    /**
+     * 文字是否根据系统文字大小改变而改变
+     * @param isChange (true:跟随系统文字大小改变而改变 false:不更随系统文字大小改变而改变)
+     */
+    public void setTextSizeChange(boolean isChange){
+        this.isTextSizeChange = isChange;
+    }
+
+    @Override
+    public Resources getResources() {
+        if (isTextSizeChange){
+            return super.getResources();
+        }
+        // 字体大小不跟随系统
+        Resources res = super.getResources();
+        Configuration config = new Configuration();
+        config.setToDefaults();
+        res.updateConfiguration(config, res.getDisplayMetrics());
+        return res;
     }
 }
