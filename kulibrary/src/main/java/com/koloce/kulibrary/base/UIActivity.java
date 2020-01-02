@@ -412,4 +412,13 @@ public abstract class UIActivity extends QMUIActivity {
     protected void getCallPermissions(PermissionsUtils.IPermissionsResult permissionsResult) {
         checkPermissions(permissionsResult, Manifest.permission.CALL_PHONE);
     }
+
+    /**
+     * 禁用换肤
+     * @return
+     */
+    @Override
+    protected boolean followSkin() {
+        return false;
+    }
 }
