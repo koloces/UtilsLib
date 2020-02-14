@@ -91,7 +91,7 @@ public class JsonConvert<T> implements Converter<T> {
             T t = Convert.fromJson(jsonReader, rawType);
             response.close();
             if (t instanceof ResponseBean){
-                if (((ResponseBean) t).code == 1){
+                if (((ResponseBean) t).code == BaseApp.SUCCESS_CODE){
                     return t;
                 } else {
                     throw new MyException("{\"result\":"+((ResponseBean) t).code+",\"msg\":\""+((ResponseBean) t).msg+"\"}"); //直接抛自定义异常  会出现在 callback的onError中
@@ -113,7 +113,7 @@ public class JsonConvert<T> implements Converter<T> {
         response.close();
 
         if (t instanceof ResponseBean){
-            if (((ResponseBean) t).code == 1){
+            if (((ResponseBean) t).code == BaseApp.SUCCESS_CODE){
                 return t;
             } else {
                 throw new MyException("{\"result\":"+((ResponseBean) t).code+",\"msg\":\""+((ResponseBean) t).msg+"\"}"); //直接抛自定义异常  会出现在 callback的onError中
