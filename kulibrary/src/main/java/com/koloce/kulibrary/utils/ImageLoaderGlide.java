@@ -54,7 +54,7 @@ public class ImageLoaderGlide {
      */
     private static RequestOptions getLoadRequestOptions() {
         return new RequestOptions()
-                .skipMemoryCache(true)
+                .skipMemoryCache(false)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(R.color.white);
     }
@@ -66,7 +66,7 @@ public class ImageLoaderGlide {
      */
     private static RequestOptions getLoadRequestOptions(int placeHolder) {
         return new RequestOptions()
-                .skipMemoryCache(true)
+                .skipMemoryCache(false)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(placeHolder)
                 .placeholder(R.color.white);
@@ -79,7 +79,7 @@ public class ImageLoaderGlide {
      */
     private static RequestOptions getLoadRequestOptions(int placeHolder, int error) {
         return new RequestOptions()
-                .skipMemoryCache(true)
+                .skipMemoryCache(false)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .placeholder(placeHolder)
                 .error(error)
@@ -132,7 +132,7 @@ public class ImageLoaderGlide {
         //设置图片圆角角度
         RoundedCorners roundedCorners = new RoundedCorners(cornerRadius);
         //通过RequestOptions扩展功能,override:采样率,因为ImageView就这么大,可以压缩图片,降低内存消耗
-        RequestOptions options = RequestOptions.bitmapTransform(roundedCorners).skipMemoryCache(true)
+        RequestOptions options = RequestOptions.bitmapTransform(roundedCorners).skipMemoryCache(false)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)/*.override(300, 300)*/;
         Glide.with(context)
                 .load(imgUrl)
@@ -149,7 +149,7 @@ public class ImageLoaderGlide {
      */
     public static void loadCircleImg(Context context, Object imgUrl, ImageView imageView) {
         if (!canLoad(context, imgUrl, imageView)) return;
-        Glide.with(context).load(imgUrl).apply(RequestOptions.bitmapTransform(new CircleCrop()).skipMemoryCache(true)
+        Glide.with(context).load(imgUrl).apply(RequestOptions.bitmapTransform(new CircleCrop()).skipMemoryCache(false)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)).into(imageView);
     }
 
@@ -203,7 +203,7 @@ public class ImageLoaderGlide {
                 .asBitmap()
                 .load(imgPath)
                 .apply(new RequestOptions()
-                        .skipMemoryCache(true)
+                        .skipMemoryCache(false)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .placeholder(R.color.white))
                 .into(target);
@@ -223,7 +223,7 @@ public class ImageLoaderGlide {
                 .asBitmap()
                 .load(imgPath)
                 .apply(new RequestOptions()
-                        .skipMemoryCache(true)
+                        .skipMemoryCache(false)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .placeholder(R.color.white))
                 .into(new SimpleTarget<Bitmap>() {
@@ -279,7 +279,7 @@ public class ImageLoaderGlide {
                 .asBitmap()
                 .load(imgPath)
                 .apply(new RequestOptions()
-                        .skipMemoryCache(true)
+                        .skipMemoryCache(false)
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .placeholder(R.color.white))
                 .into(new SimpleTarget<Bitmap>() {
