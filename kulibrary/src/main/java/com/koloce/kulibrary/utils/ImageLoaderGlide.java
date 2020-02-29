@@ -30,7 +30,6 @@ import static com.bumptech.glide.load.resource.bitmap.VideoDecoder.FRAME_OPTION;
 
 public class ImageLoaderGlide {
 
-
     /**
      * 是否允许加载图片
      *
