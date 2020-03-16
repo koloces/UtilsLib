@@ -223,7 +223,7 @@ public abstract class UIActivity extends QMUIActivity {
             try {
                 loadingDialog.dismiss();
             } catch (Exception e){
-
+                e.printStackTrace();
             }
         }
     }

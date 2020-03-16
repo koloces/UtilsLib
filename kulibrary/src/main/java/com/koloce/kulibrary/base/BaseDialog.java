@@ -23,7 +23,7 @@ import com.koloce.kulibrary.R;
 import java.util.List;
 
 /**
- * Created on 2019/4/10
+ * Created by koloces on 2019/4/10
  */
 public abstract class BaseDialog extends Dialog implements DialogInterface.OnKeyListener {
 

@@ -315,7 +315,6 @@ public class ImageLoaderGlide {
         if (context == null)return;
         if (iv == null)return;
         if (media == null)return;
-        int mimeType = media.getMimeType();
         String path = "";
         if (media.isCut() && !media.isCompressed()) {
             // 裁剪过

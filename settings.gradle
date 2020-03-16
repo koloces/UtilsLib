@@ -1,1 +1,1 @@
-include ':picture_library', ':ucrop', ':kulibrary', ':app'
+include ':kulibrary', ':app'
