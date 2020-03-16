@@ -14,7 +14,7 @@ https://jitpack.io
 #### 安装教程
 
 1. maven {url 'https://jitpack.io'}
-2. implementation 'com.github.koloces.UtilsLib:kulibrary:v1.8'
+2. implementation 'com.github.koloces:UtilsLib:v1.9'
 3. compileOptions {sourceCompatibility JavaVersion.VERSION_1_8
               targetCompatibility JavaVersion.VERSION_1_8}
 4.AppTheme继承QMUI.Compat.NoActionBar
